@@ -1,0 +1,92 @@
+.sb {  /* Status Bar */
+  background-color: cornflowerblue;
+  border-bottom: 1px solid #645DED;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  color: white;
+  display: flex;
+  font-size: 30px;
+  font-family:Arial, Helvetica, sans-serif;
+  margin-bottom: 50px;
+  padding: 10px 20px;
+}
+
+.sb__mole-counter { /* Status Bar Mole Counter */
+  flex: 1 0 0;
+  text-align: right;
+}
+
+.sb__score-holder { /* Status Bar Score Holder */
+  flex: 1 0 0;
+}
+
+.sb__game-over--hidden { /* Status Bar Game Over Text -- first state, display nothing */
+  display: none;
+}
+
+.wgs {
+  display: inline-block; /* Display containers inline */
+  margin-left: 100px; /* Adjust margin as needed to create space between moles */
+  margin-top: 70px;
+  overflow: hidden; /* Hide the overflow content */
+  height: 100%;
+  width: 100%; 
+}
+
+.mole {
+  position: relative; /* Position the mole container relative to the container */
+  height: 250px;
+  width: 320px;
+}
+
+.wgs__mole-head {
+  position: absolute; /* Position the mole-head absolutely */
+  top: 20px;  /* position the mole within the whackable game space */
+  left: 48px;
+  z-index: 1; /* Place the mole-head on top of the dirt-pile */
+  height: 65%; /* Set the height to 100% to show the whole mole */
+  width: 60%; /* Set the width to 100% to show the whole mole */
+  transition: margin-top 0.25s; /* Add the transition property */
+}
+
+.wgs__dirt-pile {
+  position: absolute; /* Position the dirt-pile absolutely */
+  top: 125px; /* position the dirt pile within the whackable game space */
+  left: 0px;
+  z-index: 2; /* Place the dirt-pile below the mole-head */
+  height: 110px;
+  width: 300px;
+}
+
+.pf {
+  display: grid; /* Set the display property to grid for the "pf" class */
+  grid-template-rows: 1fr 1fr; /* Define two rows */
+  grid-template-columns: repeat(4, 1fr); /* Define four columns */
+  gap: 50px; /* Adjust the gap between grid items as needed */
+  
+}
+
+/* Add the following CSS rule for the hidden state modifier */
+.wgs__mole-head--hidden {
+  margin-top: 320px; /* Set margin-top to the height of the block (the mole head) */
+}
+
+/* Add the in the hammer */
+#hammer {
+  position: absolute;
+  width: auto;
+  height:30%
+}
+
+/* hide the cursor */
+
+html {
+   cursor: none; 
+}
+
+body {
+  background-image: url('game-world.png'); /* Replace 'your-background-image.jpg' with your image file */
+  background-repeat: no-repeat; /* Prevent the background image from repeating */
+  background-size: cover; /* Cover the entire viewport */
+  background-attachment: fixed; /* Fix the background image in place */
+  background-position: center center; /* Center the background image horizontally and vertically */
+}
